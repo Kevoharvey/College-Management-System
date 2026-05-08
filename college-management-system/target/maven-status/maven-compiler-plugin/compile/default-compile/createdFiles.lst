@@ -1,0 +1,7 @@
+com/college/model/Student.class
+com/college/sorting/BubbleSort.class
+com/college/sorting/SelectionSort.class
+com/college/sorting/MergeSort.class
+com/college/model/Department.class
+com/college/search/BinarySearch.class
+com/college/model/Course.class
