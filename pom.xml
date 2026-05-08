@@ -1,15 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.college</groupId>
-    <artifactId>college-management-system</artifactId>
-    <version>1.0.0</version>
-    <name>College Management System</name>
-    <description>Professional College Management System Project</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -18,25 +10,27 @@
         <relativePath/>
     </parent>
 
+    <groupId>com.college</groupId>
+    <artifactId>college-management-system</artifactId>
+    <version>1.0.0</version>
+    <name>College Management System</name>
+    <description>Spring Boot college management dashboard</description>
+
     <properties>
         <java.version>17</java.version>
     </properties>
 
     <dependencies>
-
-        <!-- Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Thymeleaf -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-        <!-- DevTools -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -44,25 +38,22 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
-
-            <!-- Spring Boot Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.college.CollegeManagementApplication</mainClass>
+                </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
