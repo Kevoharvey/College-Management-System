@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | College Management System</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="courses">
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">CM</div>
+            <div class="brand-copy">
+                <p class="brand-title">College System</p>
+                <p class="brand-subtitle">Academic operations</p>
+            </div>
+        </div>
+        <button class="sidebar-toggle" type="button" aria-label="Collapse sidebar">
+            <span class="sidebar-toggle-text">Collapse</span>
+            <span class="sidebar-toggle-symbol">&lt;</span>
+        </button>
+        <nav class="nav-list">
+            <a class="nav-link" data-page="dashboard" href="/index.html"><span class="nav-icon">D</span><span class="nav-text">Dashboard</span></a>
+            <a class="nav-link" data-page="departments" href="/departments.html"><span class="nav-icon">DP</span><span class="nav-text">Departments</span></a>
+            <a class="nav-link" data-page="courses" href="/courses.html"><span class="nav-icon">C</span><span class="nav-text">Courses</span></a>
+            <a class="nav-link" data-page="students" href="/students.html"><span class="nav-icon">S</span><span class="nav-text">Students</span></a>
+            <a class="nav-link" data-page="search" href="/search.html"><span class="nav-icon">Q</span><span class="nav-text">Search</span></a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="mobile-menu" aria-label="Open navigation">☰</button>
+            <div>
+                <p class="page-kicker">Courses</p>
+                <h1 class="page-title">Course Management</h1>
+            </div>
+            <div class="topbar-actions">
+                <div class="topbar-note">Selection sort by enrollment count</div>
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                    <span class="theme-toggle-mark">A</span>
+                    <span class="theme-toggle-text">Dark</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="content workspace-grid">
+            <section class="form-panel">
+                <h2>Add Course</h2>
+                <form class="form-grid" id="courseForm">
+                    <div class="field">
+                        <label for="courseCode">Course Code</label>
+                        <input id="courseCode" name="code" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="courseName">Course Name</label>
+                        <input id="courseName" name="name" type="text" required>
+                    </div>
+                    <div class="field">
+                        <label for="numberOfStudents">Number of Students</label>
+                        <input id="numberOfStudents" name="numberOfStudents" type="number" min="0" required>
+                    </div>
+                    <div class="button-row">
+                        <button class="btn" type="submit">Add Course</button>
+                    </div>
+                    <p class="message" id="courseMessage"></p>
+                </form>
+            </section>
+
+            <section class="table-panel">
+                <div class="table-header">
+                    <h2>All Courses</h2>
+                    <button class="btn secondary" id="sortCourses" type="button">Sort by Students</button>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Students</th>
+                        </tr>
+                        </thead>
+                        <tbody id="coursesTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+</div>
+<script src="/js/app.js"></script>
+<script src="/js/courses.js"></script>
+</body>
+</html>

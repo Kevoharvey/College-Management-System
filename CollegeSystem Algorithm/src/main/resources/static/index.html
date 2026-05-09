@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | College Management System</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="dashboard">
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">CM</div>
+            <div class="brand-copy">
+                <p class="brand-title">College System</p>
+                <p class="brand-subtitle">Academic operations</p>
+            </div>
+        </div>
+        <button class="sidebar-toggle" type="button" aria-label="Collapse sidebar">
+            <span class="sidebar-toggle-text">Collapse</span>
+            <span class="sidebar-toggle-symbol">&lt;</span>
+        </button>
+        <nav class="nav-list">
+            <a class="nav-link" data-page="dashboard" href="/index.html"><span class="nav-icon">D</span><span class="nav-text">Dashboard</span></a>
+            <a class="nav-link" data-page="departments" href="/departments.html"><span class="nav-icon">DP</span><span class="nav-text">Departments</span></a>
+            <a class="nav-link" data-page="courses" href="/courses.html"><span class="nav-icon">C</span><span class="nav-text">Courses</span></a>
+            <a class="nav-link" data-page="students" href="/students.html"><span class="nav-icon">S</span><span class="nav-text">Students</span></a>
+            <a class="nav-link" data-page="search" href="/search.html"><span class="nav-icon">Q</span><span class="nav-text">Search</span></a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="mobile-menu" aria-label="Open navigation">☰</button>
+            <div>
+                <p class="page-kicker">Overview</p>
+                <h1 class="page-title">College Management Dashboard</h1>
+            </div>
+            <div class="topbar-actions">
+                <div class="topbar-note">Live data from the Spring Boot API</div>
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                    <span class="theme-toggle-mark">A</span>
+                    <span class="theme-toggle-text">Dark</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="hero-panel">
+                <div class="intro-band">
+                    <h2>Academic data at a glance</h2>
+                    <p>Manage departments, course enrollment, student records, sorted views, and targeted searches from one connected interface.</p>
+                </div>
+                <div class="insight-panel">
+                    <h2>Top student</h2>
+                    <div class="insight-value" id="topStudent">Loading</div>
+                    <p class="insight-label" id="topStudentMeta">Checking current GPA rankings.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <p class="stat-label">Departments</p>
+                    <p class="stat-value" id="departmentsCount">0</p>
+                    <div class="stat-accent"></div>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-label">Courses</p>
+                    <p class="stat-value" id="coursesCount">0</p>
+                    <div class="stat-accent"></div>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-label">Students</p>
+                    <p class="stat-value" id="studentsCount">0</p>
+                    <div class="stat-accent"></div>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-label">Course Enrollments</p>
+                    <p class="stat-value" id="enrollmentsCount">0</p>
+                    <div class="stat-accent"></div>
+                </article>
+            </div>
+
+            <div class="insight-panel">
+                <h2>Average GPA</h2>
+                <div class="insight-value" id="averageGpa">0.00</div>
+                <p class="insight-label">Calculated from the current student list.</p>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="/js/app.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

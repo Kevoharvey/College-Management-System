@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | College Management System</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="search">
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">CM</div>
+            <div class="brand-copy">
+                <p class="brand-title">College System</p>
+                <p class="brand-subtitle">Academic operations</p>
+            </div>
+        </div>
+        <button class="sidebar-toggle" type="button" aria-label="Collapse sidebar">
+            <span class="sidebar-toggle-text">Collapse</span>
+            <span class="sidebar-toggle-symbol">&lt;</span>
+        </button>
+        <nav class="nav-list">
+            <a class="nav-link" data-page="dashboard" href="/index.html"><span class="nav-icon">D</span><span class="nav-text">Dashboard</span></a>
+            <a class="nav-link" data-page="departments" href="/departments.html"><span class="nav-icon">DP</span><span class="nav-text">Departments</span></a>
+            <a class="nav-link" data-page="courses" href="/courses.html"><span class="nav-icon">C</span><span class="nav-text">Courses</span></a>
+            <a class="nav-link" data-page="students" href="/students.html"><span class="nav-icon">S</span><span class="nav-text">Students</span></a>
+            <a class="nav-link" data-page="search" href="/search.html"><span class="nav-icon">Q</span><span class="nav-text">Search</span></a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="mobile-menu" aria-label="Open navigation">☰</button>
+            <div>
+                <p class="page-kicker">Search</p>
+                <h1 class="page-title">Find Records</h1>
+            </div>
+            <div class="topbar-actions">
+                <div class="topbar-note">Department name and student ID lookup</div>
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                    <span class="theme-toggle-mark">A</span>
+                    <span class="theme-toggle-text">Dark</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="content search-layout">
+            <section class="search-panel">
+                <h2>Search Department</h2>
+                <form class="form-grid" id="departmentSearchForm">
+                    <div class="field">
+                        <label for="searchDepartmentName">Department Name</label>
+                        <input id="searchDepartmentName" name="name" type="text" required>
+                    </div>
+                    <div class="button-row">
+                        <button class="btn" type="submit">Search Department</button>
+                    </div>
+                </form>
+                <div class="result-box" id="departmentResult">
+                    <p>Department results appear here.</p>
+                </div>
+            </section>
+
+            <section class="search-panel">
+                <h2>Search Student</h2>
+                <form class="form-grid" id="studentSearchForm">
+                    <div class="field">
+                        <label for="searchStudentId">Student ID</label>
+                        <input id="searchStudentId" name="id" type="number" min="1" required>
+                    </div>
+                    <div class="button-row">
+                        <button class="btn" type="submit">Search Student</button>
+                    </div>
+                </form>
+                <div class="result-box" id="studentResult">
+                    <p>Student results appear here.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+</div>
+<script src="/js/app.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>
