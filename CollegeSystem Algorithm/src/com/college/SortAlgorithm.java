@@ -3,25 +3,26 @@ package com.college;
 import java.util.ArrayList;
 
 public class SortAlgorithm {
-    //Bubble Sort → Departments (By Name)
-        public static void bubbleSortDepartments(ArrayList<Department> list) {
+    // Bubble Sort → Departments (By Name)
+    public static void bubbleSortDepartments(ArrayList<Department> list) {
 
-            int n = list.size();
+        int n = list.size();
 
-            for (int i = 0; i < n - 1; i++) {
-                for (int j = 0; j < n - i - 1; j++) {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
 
-                    if (list.get(j).getName()
-                            .compareToIgnoreCase(list.get(j + 1).getName()) > 0) {
+                if (list.get(j).getName()
+                        .compareToIgnoreCase(list.get(j + 1).getName()) > 0) {
 
-                        Department temp = list.get(j);
-                        list.set(j, list.get(j + 1));
-                        list.set(j + 1, temp);
-                    }
+                    Department temp = list.get(j);
+                    list.set(j, list.get(j + 1));
+                    list.set(j + 1, temp);
                 }
             }
         }
-    //Selection Sort → Courses (By Number of Students)
+    }
+
+    // Selection Sort → Courses (By Number of Students)
     public static void selectionSortCourses(ArrayList<Course> list) {
 
         int n = list.size();
@@ -32,8 +33,7 @@ public class SortAlgorithm {
 
             for (int j = i + 1; j < n; j++) {
 
-                if (list.get(j).getNumberOfStudents()
-                        < list.get(minIndex).getNumberOfStudents()) {
+                if (list.get(j).getNumberOfStudents() < list.get(minIndex).getNumberOfStudents()) {
 
                     minIndex = j;
                 }
@@ -44,7 +44,7 @@ public class SortAlgorithm {
             list.set(minIndex, temp);
         }
     }
-    //Insertion Sort → Students (By GPA)
+    // Insertion Sort → Students (By GPA)
 
     public static void insertionSortStudents(ArrayList<Student> list) {
 
@@ -62,5 +62,3 @@ public class SortAlgorithm {
         }
     }
 }
-
-

@@ -41,13 +41,16 @@ function setupTheme() {
     const themeToggle = document.querySelector(".theme-toggle");
     const savedTheme = localStorage.getItem("college-theme") || "light";
 
-    document.documentElement.dataset.theme = savedTheme;
+    // Apply saved theme immediately on page load
+    document.documentElement.setAttribute("data-theme", savedTheme);
 
     if (themeToggle) {
         updateThemeToggle(themeToggle, savedTheme);
         themeToggle.addEventListener("click", () => {
-            const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-            document.documentElement.dataset.theme = nextTheme;
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const nextTheme = currentTheme === "dark" ? "light" : "dark";
+            
+            document.documentElement.setAttribute("data-theme", nextTheme);
             localStorage.setItem("college-theme", nextTheme);
             updateThemeToggle(themeToggle, nextTheme);
         });
@@ -57,7 +60,7 @@ function setupTheme() {
 function updateThemeToggle(themeToggle, theme) {
     themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
     themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
-    themeToggle.querySelector(".theme-toggle-text").textContent = theme === "dark" ? "Light" : "Dark";
+    themeToggle.querySelector(".theme-toggle-text").textContent = theme === "dark" ? "☀️ Light" : "🌙 Dark";
 }
 
 function setupNavigation() {
